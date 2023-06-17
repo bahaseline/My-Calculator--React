@@ -1,0 +1,129 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Courier New", Courier, monospace;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #202020;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.calculator .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+  position :fixed;
+  min-width: 300px;
+  min-height: 400px;
+  padding: 40px 30px 30px;
+  border-radius: 20px;
+  box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
+    10px 10px 70px rgba(0, 0, 0, 0.25), inset -5px -5px 15px rgba(0, 0, 0, 0.25),
+    inset 5px 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.container .row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.calculator span {
+  color: #2569; /* Updated font color to black */
+}
+
+.container {
+  position: relative;
+}
+
+.container span {
+  color: #000; /* Updated font color to black */
+  position: relative;
+  display: grid;
+  place-items: center;
+  margin: 8px;
+  height: 80px;
+  width: 80px;
+  background: #2f2f2f; /* Added a contrasting background color */
+  box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15),
+    inset 0 -8px 8px rgba(0, 0, 0, 0.25), 0 0 0 2px rgba(0, 0, 0, 0.75),
+    10px 20px 25px rgba(0, 0, 0, 0.4);
+  user-select: none;
+  cursor: pointer;
+  font-weight: 400;
+  border-radius: 10px;
+  font-size: 1.5em;
+  transition: 0.2s ease-in-out;
+}
+
+.container span::before {
+  content: attr(data-number); /* Display the 'data-number' attribute as the content */
+  display: block;
+  position: absolute;
+  top: -100%; /* Position the content above the span */
+  width: 100%;
+  text-align: center;
+  font-size: 0.8em; /* Adjust the font size as needed */
+  margin-top: -4px; /* Add some negative margin to align with the top of the button */
+}
+
+
+.calculator span {
+  color: #fff;
+  position: relative;
+  font-style: normal;
+  font-size: 1.8em; /* Decrease the font size slightly for better fit */
+  text-transform: uppercase;
+}
+
+.calculator {
+  position: relative;
+  display: grid;
+}
+
+.calculator .value {
+  position: relative;
+  grid-column: span 4;
+  height: 100px;
+  width: calc(100% - 20px);
+  left: 10px;
+  border: none;
+  outline: none;
+  background-color: #a7af7c;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.75);
+  text-align: right;
+  padding: 10px;
+  font-size: 2em;
+}
+
+.calculator .clear {
+  grid-column: span 2;
+  width: 82px; /* Increase the width of the clear button */
+  background: #f00;
+}
+
+.calculator .plus {
+  grid-row: span 2;
+  width: 180px; /* Increase the width of the plus button */
+}
+
+.calculator .equal {
+  background: #2196f3;
+}
+
